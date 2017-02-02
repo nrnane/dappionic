@@ -1,0 +1,165 @@
+<ion-view title="{{user.first_name}}">
+<ion-content >
+  <ng-include src="'templates/blocks/profile-block.html'"></ng-include>
+  <div class="button-bar">
+      <a href="#/app/my-profile/{{user.uid}}" class="button button-assertive">About Me</a>
+      <a href="#/app/my-photos/{{user.uid}}" class="button button-assertive">Photos</a>
+  </div>
+  <a href="#/app/myprofile_edit" ng-show="uid==user.uid" class="button button-dark button-block">Edit Profile</a>
+  <div class="row padding-20">
+
+    <table width="100%" class="table-bordered">
+      <tr>
+        <td  width="50%">
+          Height:
+        </td>
+        <td >
+          {{user.height}}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Body Type:
+        </td>
+        <td>
+          {{user.body_type}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Looking for:
+        </td>
+        <td>
+          {{user.looking_for}}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Intrest in:
+        </td>
+        <td>
+          {{user.intrest_in}}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Marital Status:
+        </td>
+        <td>
+          {{user.marital_status}}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Religion:
+        </td>
+        <td>
+          {{user.religion}}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Drinks:
+        </td>
+        <td>
+          {{user.drinks}}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Smokes:
+        </td>
+        <td>
+          {{user.smokes}}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Intrests:
+        </td>
+        <td>
+          {{user.intrests}}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Education:
+        </td>
+        <td>
+          {{user.education}}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Profession:
+        </td>
+        <td>
+          {{user.profession}}
+        </td>
+      </tr>
+      <tr>
+        <td>Income / Month:</td>
+        <td>{{user.income}}</td>
+      </tr>
+
+      <tr>
+        <td>
+          A Little about me:
+        </td>
+        <td>
+          {{user.about_me}}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="background:#D2D2D2;">
+          Location Details
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Country:
+        </td>
+        <td>
+          {{user.country}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          State:
+        </td>
+        <td>
+          {{user.state}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          City:
+        </td>
+        <td>
+          {{user.city}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Locality:
+        </td>
+        <td>
+          {{user.locality}}
+        </td>
+      </tr>
+
+
+    </table>
+  </div>
+
+</ion-content>
+</ion-view>

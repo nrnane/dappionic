@@ -1,0 +1,144 @@
+<ion-view title="Edit Profile">
+<ion-content >
+
+  <div class="row">
+    <div class="list" style="width:100%;">
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Height:
+          </div>
+          <select class="" ng-model="user.height">
+            <option>Select Height</option>
+            <option ng-repeat="height in height_list" value="{{height.id}}"  ng-selected="height.id==user_data.height">{{height.height}}</option>
+          </select>
+        </label>
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Body Type:
+          </div>
+          <select class="" ng-model="user.body_type">
+            <option>No Answer</option>
+            <option ng-repeat="item in user_body_type" value="{{item.id}}">{{item.name}}</option>
+          </select>
+        </label>
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Looking for:
+          </div>
+          <select class="" name="" ng-model="user.looking_for">
+            <option value="1">Man</option>
+            <option value="0">Women</option>
+          </select>
+        </label>
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Intrest in:
+          </div>
+          <select class="" ng-model="user.intrest_in">
+            <option ng-repeat="item in user_intrest_type" value="{{item.id}}">{{item.name}}</option>
+          </select>
+        </label>
+
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Marital Status:
+          </div>
+          <select ng-model="user.marital_status">
+                <option value="Single">Single</option>
+                <option value="Married">Married</option>
+                <option value="Widow">Widow</option>
+                <option value="Separated">Separated</option>
+            </select>
+        </label>
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Religion:
+          </div>
+          <select ng-model="user.religion">
+            <option value="">Select One</option>
+              <option ng-repeat="item in religions" value="{{item.id}}">{{item.name}}</option>
+             </select>
+        </label>
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Drinks:
+          </div>
+          <select ng-model="user.drinks">
+            <option ng-repeat="item in habits" value="{{item.id}}">{{item.name}}</option>
+          </select>
+        </label>
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Smokes:
+          </div>
+          <select ng-model="user.smokes">
+            <option ng-repeat="item in habits" value="{{item.id}}">{{item.name}}</option>
+          </select>
+        </label>
+
+
+
+        <label class="item item-input ">
+          <div class="input-label">
+            Intrests:
+          </div>
+        <input type="text" ng-model="user.intrests" value="">
+        </label>
+
+        <label class="item item-input ">
+          <div class="input-label">
+            Education:
+          </div>
+        <input type="text" ng-model="user.education" value="">
+        </label>
+
+        <label class="item item-input">
+          <div class="input-label">
+            Profession:
+          </div>
+          <input type="text"ng-model="user.profession" value="">
+        </label>
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Income / Month:
+          </div>
+          <select ng-model="user.income">
+            <option ng-repeat="item in income" value="{{item.id}}">{{item.name}}</option>
+          </select>
+        </label>
+
+        <label class="item item-input ">
+          <div class="input-label">
+            A Little about me:
+          </div>
+        <textarea ng-model="user.about_me" ></textarea>
+        </label>
+
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Location Name</span>
+          <input type="text"  placeholder="Enter Your Location Name"  g-places-autocomplete ng-model="user.location" ng-change="tracklocation(user.location,user)">
+          <div id="search_res" style="display:none;"></div>
+        </label>
+
+        <label class="item item-input">
+<input type="button" name="name" value="Update" ng-click="updateProfileInfo(user)" class="button button-block button-positive" style="margin-right: 15px;">
+        </label>
+        <!--<pre>{{user|json}}</pre>-->
+      </div>
+
+  </div>
+
+
+
+
+</ion-content>
+</ion-view>

@@ -1,0 +1,56 @@
+<ion-header-bar class="bar-energized" title="Home">
+</ion-header-bar>
+<ion-view view-title="Home">
+  <ion-content>
+    <div class="row">
+
+        <div class="col-33 home_boxes">
+          <a href="#/app/my-profile/{{uid}}">
+          <i class="ion-person"></i>
+          <h3>My Profile</h3>
+          </a>
+        </div>
+
+        <div class="col-33 home_boxes">
+          <a href="#/app/messages">
+          <i class="ion-ios-chatboxes"></i>
+          <h3>Messages</h3>
+
+          <span class="badge badge-energized" ng-hide="get_unseen_count.messages==0">{{get_unseen_count.messages}}</span>
+          </a>
+        </div>
+
+        <div class="col-33 home_boxes">
+          <a href="#/app/favorites">
+          <i class="ion-star"></i>
+          <h3>Favorites</h3>
+          </a>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-33 home_boxes">
+        <a href="#/app/search">
+        <i class="ion-search"></i>
+        <h3>Search</h3>
+        </a>
+      </div>
+
+      <div class="col-33 home_boxes">
+        <a href="#/app/who-viewed-me">
+        <i class="ion-ios-glasses"></i>
+        <h3>Who Viewed Me</h3>
+        </a>
+      </div>
+
+      <div class="col-33 home_boxes">
+        <a href="#/app/likes">
+        <i class="ion-android-favorite"></i>
+        <h3>Likes</h3>
+        </a>
+      </div>
+    </div>
+    <div class="title-blackbg">People You Might Be Intrested In</div>
+    <ng-include src="'templates/blocks/search_result.html'"></ng-include>
+  </ion-content>
+</ion-view>

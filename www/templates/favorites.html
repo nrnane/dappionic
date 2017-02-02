@@ -1,0 +1,19 @@
+
+<ion-view title="Favorites">
+  <ion-header-bar class="bar-energized" title="Home">
+  </ion-header-bar>
+  <ion-content>
+    <div class="list " >
+
+      <div class="item item-avatar item-icon-right" ng-repeat="item in favorites">
+        <img src="{{item.ProfilePic|CheckUserImage}}">
+        <h2><a href="#/app/profile/{{item.uid}}">{{item.first_name+' '+item.last_name}}</a></h2>
+
+        <i class="icon ion-trash-a" ng-click="add_to_favorite(item)" ></i>
+      </div>
+      <div class="item text-center" ng-show="favorites.length==0">
+        No Favorites
+      </div>
+  </div>
+  </ion-content>
+</ion-view>

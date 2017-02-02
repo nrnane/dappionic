@@ -1,0 +1,23 @@
+<ion-view title="Messages">
+  <ion-content>
+    <div class="list">
+          <a class="item item-avatar" ng-repeat="item in UnSeenChatMsg" href="#/app/privatechat/{{item.to_uid==uid?item.from_uid:item.to_uid}}">
+
+              <img ng-src="{{item.ProfilePic|CheckUserImage}}" alt="" />
+              <h2>{{item.first_name+' '+item.last_name}}</h2>
+              <p>
+                {{item.message}}<br/>
+
+              </p>
+              <i>{{item.time}}</i>
+
+              <span class="time_in_home">{{item.date}}</span>
+              <span class="badge badge-assertive" ng-hide="item.unseen_msg_count==0">{{item.unseen_msg_count}}</span>
+          </a>
+          <div class="item text-center" ng-show="UnSeenChatMsg.length==0">
+            No Messages
+          </div>
+      </div>
+      <center>{{messages_text}}</center>
+  </ion-content>
+</ion-view>

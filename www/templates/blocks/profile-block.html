@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-50">
+      <div class="img_block ProfilePic" style="width: 100%;background:#cbd7d5;">
+
+      <img class="full-image" id="ProfilePic" ng-src="{{user.ProfilePic | CheckUserImage}}">
+      </div>
+
+      <div class="" id="output_media"></div>
+      <div class="button-bar" ng-show="uid==user.uid">
+        <button type="button" class="button button-small f12 button-royal" ng-click="uploadPhoto()">UPLOAD</button>
+        <button type="button" class="button button-small f12 button-royal" ng-click="capturePhoto()">CAPTURE</button>
+      </div>
+  </div>
+
+  <div class="col-50" style="padding-left:15px;">
+
+      <h2>{{user.first_name}} {{user.last_name}}</h2>
+      <p>
+        {{user.age}} age, {{user.gender}}<br/>
+        <i class="ion-ios-glasses"></i> Looking for {{user.looking_for}}<br/>
+        <i class="ion-ios-location"></i>   {{user.city}} {{user.state}} {{user.country}}<br/>
+      </p>
+      <div class="online_user" ng-show="user.online==1">
+        <i class="ion-ios-circle-filled useronline online " title="Online"></i> Online
+      </div>
+  </div>
+</div><!--End-->
+
+
+  <div class="button-bar" ng-hide="uid==user.uid">
+      <span class="button icon-left ion-star" ng-click="addToFavorite(user.uid)" >{{AddToFavorite}}</span>
+      <a href="#/app/privatechat/{{user.uid}}" class="button icon-left ion-email" >Send a Message</a>
+  </div>

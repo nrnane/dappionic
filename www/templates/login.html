@@ -1,0 +1,37 @@
+<ion-view title="Login">
+  <ion-content>
+    <form >
+      <center>
+        <img src="img/ionic.png" alt="" width="90" style="margin: 40px 0 10px;" />
+      </center>
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Email</span>
+          <input type="text" ng-model="loginData.username">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="password" ng-model="loginData.password">
+        </label>
+        <label class="item">
+          <button class="button button-block button-balanced" type="submit" ng-click="doLogin(loginData)">Login</button>
+        </label>
+
+          <a href="#/app/register" class="item text-center">If not a user ? Register here</a>
+          <a href="#/app/forgot-password" class="item text-center">Forgot Password ?</a>
+
+        <!--<label class="item">
+          <center>OR</center>
+        </label>
+
+        <label class="item">
+          <center><a href="#" class="button button-block button-positive">Login with Facebook</a></center>
+        </label>
+
+        <label class="item">
+          <center><a href="#" class="button button-block button-assertive">Login with Google</a></center>
+        </label>-->
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

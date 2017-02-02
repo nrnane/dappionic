@@ -1,0 +1,96 @@
+<button class="button button-full button-royal" ng-click="searchfilter=searchfilter?false:true">
+  Search Filter
+</button>
+
+<div class="filter padding" ng-model="searchfilter" ng-show="searchfilter" ng-init="user.lookingfor='0';user.age_range_from='18';user.age_range_to='30';user.distance='any'">
+  <div class="page-subhead">Search</div>
+
+  <div class="list">
+      <label class="item item-input item-select">
+      <div class="input-label">
+        Looking for
+      </div>
+      <select ng-model="user.lookingfor">
+        <option value="1" selected="selected">Men</option>
+        <option value="0" >Women</option>
+        <option value="both">Both</option>
+      </select>
+    </label>
+  </div>
+
+<div class="list">
+      <label class="item item-input item-select">
+      <div class="input-label">
+        Intrest in:
+      </div>
+      <select class="" ng-model="user.intrest_in">
+          <option value="all" selected="selected">All</option>
+            <option ng-repeat="item in user_intrest_type" value="{{item.id}}">{{item.name}}</option>
+          </select>
+    </label>
+  </div>
+
+  <div class="list">
+  <div class="item item-input item-select">
+    <div class="input-label">
+      Age From
+    </div>
+
+    {{age_range_from}}
+    <select class="" name="" ng-model="user.age_range_from">
+      <option ng-repeat="age in ages" ng-selected="age==18">{{age}}</option>
+    </select>
+  </div>
+</div>
+
+<div class="list">
+<div class="item  item-input item-select">
+  <div class="input-label">
+    Age To
+  </div>
+  <select class="" name="" ng-model="user.age_range_to">
+    <option ng-repeat="age in ages" ng-selected="age==30">{{age}}</option>
+  </select>
+
+</div>
+</div>
+
+
+
+  <div class="list">
+      <label class="item item-input">
+      <div class="input-label">
+        Place
+      </div>
+      <input type="text" ng-model="user.place" g-places-autocomplete  ng-change="tracklocation(user.place,user)">
+      <div id="search_res" style="display:none;"></div>
+    </label>
+  </div>
+
+  <div class="list">
+      <label class="item item-input item-select">
+      <div class="input-label">
+        Within
+      </div>
+      <select class="" name="" ng-model="user.distance">
+        <option value="15">15 Kilometers</option>
+        <option value="25">25 Kilometers</option>
+        <option value="50">50 Kilometers</option>
+        <option value="100">100 Kilometers</option>
+        <option value="150">150 Kilometers</option>
+        <option value="200">200 Kilometers</option>
+        <option value="250">250 Kilometers</option>
+        <option value="500">500 Kilometers</option>
+        <option value="any" selected>Any Distance</option>
+      </select>
+    </label>
+  </div>
+  <!--<pre>
+  {{user|json}}
+</pre>-->
+  <button class="button button-full button-positive" ng-click="search_filter(user)">
+    Search
+  </button>
+
+
+</div> <!--ENd Search Filter-->

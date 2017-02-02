@@ -1,0 +1,27 @@
+<ion-view title="Likes">
+  <ion-content>
+    <div class="list">
+      <div class="item item-avatar item-icon-right" ng-repeat="item in likesList">
+        <img src="{{item.ProfilePic|CheckUserImage}}">
+        <h2><a href="#/app/profile/{{item.uid}}"><strong>{{item.first_name+' '+item.last_name}}</strong> <i>Liked you</i></a></h2>
+        <p>
+          {{item.time_to_ago}}
+        </p>
+        <i class="icon ion-trash-a" ng-click="delete_item(item,likesList,'profile_likes','id',item.id)" ng-confirm-click="are you sure you want to delete this ?" ></i>
+      </div>
+
+      <div class="item item-avatar item-icon-right" ng-repeat="item in YouLikedList">
+        <img src="{{item.ProfilePic|CheckUserImage}}">
+        <h2><a href="#/app/profile/{{item.profile_liked_uid}}">You Liked <strong>{{item.first_name+' '+item.last_name}}</strong></a></h2>
+        <p>
+          {{item.time_to_ago}}
+        </p>
+        <i class="icon ion-trash-a" ng-click="delete_item(item,YouLikedList,'profile_likes','id',item.id)" ng-confirm-click="are you sure you want to delete this ?" ></i>
+      </div>
+      <div class="item text-center" ng-show="likesList.length==0 && YouLikedList.length==0">
+        No Likes
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,80 @@
+<ion-view title="Register">
+  <ion-content>
+    <form name="register_form" ng-submit="doRegister(user)" novalidate>
+      <div class="list">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">First Name</span>
+    <input type="text" placeholder="Enter Your First Name" name="first_name" ng-model="user.first_name" required>
+
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Last Name</span>
+    <input type="text" placeholder="Enter Your Last Name" ng-model="user.last_name" >
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Email</span>
+    <input type="text" name="email" placeholder="name@example.com" ng-model="user.email" required>
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Password</span>
+    <input type="password" placeholder="Password" ng-model="user.password" required>
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Re Type Password</span>
+    <input type="password" placeholder="Password" ng-model="user.repassword" required>
+  </label>
+
+  <label class="item item-input item-select">
+    <div class="input-label">Gender</div>
+    <select class="" name="" ng-model="user.gender" required>
+      <option value="1">Man</option>
+      <option value="0">Women</option>
+    </select>
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Your Date of Birth</span>
+    <input type="date" placeholder="Select Your Date of Birth" ng-model="user.date_of_birth" required>
+  </label>
+
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Username</span>
+    <input type="text" placeholder="Username Only Letters and Numbers" ng-model="user.username" ng-keyup="checkusername(user.username)" required>
+    <span style="color:red;font-size:13px;" class="label label-danger" ng-show="username_available">UserName already Exist. Try with other name</span>
+  </label>
+
+
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Location Name</span>
+    <input type="text"  placeholder="Enter Your Location Name"  g-places-autocomplete ng-model="user.location" ng-change="tracklocation(user.location,user)" required>
+    <div id="search_res" style="display:none;"></div>
+  </label>
+  <label class="item" ng-click="termsConditions_popup()">
+    <span >View terms & conditions</span>
+  </label>
+  <label ng-show="read_terms_conditions_btn">
+    <ion-checkbox ng-model="user.accept_terms" required>i accept <a href="">terms & conditions</a></ion-checkbox>
+  </label>
+  <label class="item text-center">
+    <span ng-hide="register_form.$valid">Please Fill All Fields</span>
+    <button class="button button-block button-balanced" ng-disabled="register_form.$invalid" type="submit">Signup</button>
+  </label>
+</div>
+<!--<pre>{{user|json}}</pre>-->
+
+      <!--<div class="list">
+
+        <label class="item">
+          <center>OR</center>
+        </label>
+
+        <label class="item">
+          <center><a href="#" class="button button-block button-positive">Signup with Facebook</a></center>
+        </label>
+
+        <label class="item">
+          <center><a href="#" class="button button-block button-assertive">Signup with Google</a></center>
+        </label>
+      </div>-->
+    </form>
+  </ion-content>
+</ion-view>

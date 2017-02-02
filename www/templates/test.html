@@ -1,0 +1,19 @@
+  <header class="bar bar-header bar-positive">
+      <h1 class="title">Ionic Infinite Scroll with {{items.length}} items</h1>
+    </header>
+
+    <ion-content class="has-header">
+
+      <ion-list>
+
+        <ion-item ng-repeat="item in items" 
+                  item="item"
+                  href="#/item/{{item.uid}}" style="height:100px;">
+          {{ item }}
+        </ion-item>
+
+      </ion-list>
+      <div ng-show="noMoreItemsAvailable">No Users</div>
+      <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="30"></ion-infinite-scroll>
+      
+    </ion-content>
